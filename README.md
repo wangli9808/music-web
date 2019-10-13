@@ -43,5 +43,8 @@ version 1.0（2019.10.11）
 140.82.114.3	  github.com
 199.232.5.194	 github.global.ssl.fastly.net
 
+最后刷新DNS,cmd窗口执行命令
+ipconfig /flushdns
+
 -------------------------------------------
 
