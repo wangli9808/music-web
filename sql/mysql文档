@@ -3,6 +3,7 @@ version 1.0     2019.10.15
 
 数据库名称：rongMusic
 
+
 用户表：user
 
     user_id               ---用户id(key，AUTO)
