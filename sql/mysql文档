@@ -52,7 +52,7 @@ vip歌曲表：music_vip
 歌手热度表：singer_hot
     
     singer_id             ---歌手id
-    singer_hotPoint       ---歌手热度（歌手每一首歌曲热度相加）
+    singer_hotPoint       ---歌手热度（歌手每一首歌曲被点击，热度加1，每一首歌曲被收藏，热度加3）
     
 歌手和音乐：singer_and_music
     singer_id             ---歌手id
