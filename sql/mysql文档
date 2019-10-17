@@ -1,4 +1,4 @@
-version 1.0     2019.10.15 
+version 1.0     2019.10.15
 ----------------------------------------------
 
 数据库名称：rongMusic
@@ -12,69 +12,67 @@ version 1.0     2019.10.15
     user_email            ---用户邮箱
     user_addr             ---用户地址
     user_sex              ---用户性别（1：男性 0：女性）
-    
+
 管理员表：admin
 
     user_id               ---用户id
     isAdmin               ---是否为管理员（1：管理员 2：非管理员）
-    
+
 VIP表：user_vip
-    
+
     user_id               ---用户id
     user_isVIP            ---用户是否为VIP（1：是VIP 0：不是VIP）
-    
+
 歌曲表：music
-    
+
     music_id              ---歌曲id(key,AUTO)
     music_name            ---音乐名
     singer_id             ---歌手id
     music_link            ---歌曲储存位置
     music_lyric           ---歌词存储位置
     music_photo           ---音乐图片存储位置
-    
-vip歌曲表：music_vip
-    
-    music_id              ---歌曲id
     music_isVIP           ---是否为vip专属歌曲（1：isVIP 2：notVIP）
-  
+
+
+
 歌曲热度表：music_hot
 
     music_id              ---歌曲id
     music_hotPoint        ---歌曲热度（用户每点击一次音乐，热度值加1，收藏进歌单热度值加3）
-    
+
 歌手表：singer
-    
+
     singer_id             ---歌手id(key,AUTO)
     singer_name           ---歌手名字
     singer_sex            ---歌手性别
     singer_introduction   ---歌手简介
-      
+
 歌手热度表：singer_hot
-    
+
     singer_id             ---歌手id
     singer_hotPoint       ---歌手热度（歌手每一首歌曲被点击，热度加1，每一首歌曲被收藏，热度加3）
-    
+
 歌手和音乐：singer_and_music
     singer_id             ---歌手id
     music_id              ---歌曲id
-    
+
 用户歌单表：user_playlist
     list_id               ---用户歌单id（key，AUTO）
     list_name             ---歌单名
     user_id               ---用户id
-    
+
 歌单歌曲表：playlist_and_music
 
     list_id               ---用户歌单id
     music_id              ---歌曲id
-    
+
 歌曲类型表：music_type
 
     musicType_id          ---歌曲类型id（key）
     musicType_name        ---歌曲类型名
-   
+
 歌曲分类表：music_and_musicType
-    
+
     music_id              ---歌曲id
     musicType_id          ---歌曲类型id
 
@@ -100,4 +98,4 @@ vip歌曲表：music_vip
 
 
 
-    
+
