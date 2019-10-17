@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: rcmusic-common-resources
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: tarena
+Implementation-Vendor-Id: cn.tedu
+Build-Jdk: 1.8.0_71
+Implementation-URL: http://projects.spring.io/spring-boot/rcmusic-comm
+ on-resources/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
