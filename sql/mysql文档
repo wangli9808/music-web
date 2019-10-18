@@ -1,10 +1,16 @@
-version 1.0     2019.10.15
+version 1.4    2019.10.18 09:59
 ----------------------------------------------
 
-数据库名称：rongMusic
+数据库名称：rongmusic
+
+注： 数据库统一名称rongmusic，今日下午开始数据库统一，晚上开始第一次联调
+
+    音乐系统所需数据库表为下面列出，其余表为后台系统表，不用关注
+    user表更名为rcuser（不与后台冲突）
+    删除管理员表，管理员独立于后台系统
 
 
-用户表：user
+用户表：rcuser
 
     user_id               ---用户id(key，AUTO)
     user_name             ---用户名(UNIQUE)
@@ -13,10 +19,6 @@ version 1.0     2019.10.15
     user_addr             ---用户地址
     user_sex              ---用户性别（1：男性 0：女性）
 
-管理员表：admin
-
-    user_id               ---用户id
-    isAdmin               ---是否为管理员（1：管理员 2：非管理员）
 
 VIP表：user_vip
 
