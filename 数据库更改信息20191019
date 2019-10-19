@@ -1,0 +1,113 @@
+version 1.5    2019.10.18 14:30
+----------------------------------------------
+
+数据库名称：rongmusic
+
+注： 数据库统一名称rongmusic，今日下午开始数据库统一，晚上开始第一次联调
+
+    音乐系统所需数据库表为下面列出，其余表为后台系统表，不用关注
+    user表更名为rcuser（不与后台冲突）
+    删除管理员表，管理员独立于后台系统
+
+    新增用户推荐表
+    歌曲热度逻辑：已注册用户跟游客点击某一首音乐都会使音乐热度值+1，用户添加某一首音乐使热度值+3
+    个性化推荐逻辑：1.已注册用户点击某一首音乐时会根据音乐的id获取该音乐的类型id
+                  2.根据获取的用户id跟音乐类型id查询user_recommend表中是否有该条数据
+                        （1）不存在：根据用户id，歌曲类型id创建一条数据，点击次数（click_times）值设置为1
+                        （2）存在：将该条数据点击次数（click_recommend）进行+1
+                  3：推荐时根据登录用户的id查询user_recommend表中点击次数最多的两种（或一种）类型，返回该类型的id，根据类型id查询该类型的歌曲进行推荐
+
+用户表：rcuser
+
+    user_id               ---用户id(key，AUTO)
+    user_name             ---用户名(UNIQUE)
+    user_password         ---用户密码
+    user_email            ---用户邮箱
+    user_sex              ---用户性别（1：男性 0：女性）
+    registration_time     ---用户注册时间（在数据库中自动生成）
+    user_addr             ---用户地址
+    user_isVIP            ---是否为Vip用户（1：Vip 0:普通用户）
+
+用户推荐表：rcuser_recommend
+
+    user_id               ---用户id
+    music_type_id         ---音乐类型id
+    click_times           ---用户点击该类型的次数
+
+歌曲表：music
+
+   	song_id              ---歌曲id(key,AUTO)
+    song_name            ---音乐名
+    singer_id             ---歌手id
+    song_link            ---歌曲储存位置
+    song_lyric           ---歌词存储位置
+    photo_link           ---音乐图片存储位置
+    song_isVIP           ---是否为vip专属歌曲（1：isVIP 2：notVIP）
+
+
+
+歌曲热度表：music_hot
+
+    song_id              ---歌曲id
+    song_hot_Point        ---歌曲热度（用户每点击一次音乐，热度值加1，收藏进歌单热度值加3）
+
+歌手表：singer
+
+    singer_id             ---歌手id(key,AUTO)
+    singer_name           ---歌手名字
+    singer_sex            ---歌手性别(1:为男 0：为女)
+    singer_introduction   ---歌手简介
+    singer_image_link     ---歌手图片链接
+
+歌手热度表：singer_hot
+
+    singer_id             ---歌手id
+    singer_hot_Point       ---歌手热度（歌手每一首歌曲被点击，热度加1，每一首歌曲被收藏，热度加3）
+
+歌手和音乐：singer_and_music
+    singer_id             ---歌手id
+    music_id              ---歌曲id
+
+用户歌单表：user_music_list
+    music_list_id               ---用户歌单id（key，AUTO）
+    music_list_name             ---歌单名
+    user_id               		---用户id
+
+歌单歌曲表：user_conection
+
+    music_list_id               ---用户歌单id
+    song_id              ---歌曲id
+
+歌曲类型表：musicType
+
+    song_type_id          ---歌曲类型id（key）
+    song_type_name        ---歌曲类型名
+
+歌曲分类表：music_and_musictype
+
+   song_id              	---歌曲id
+   song_type_id          	---歌曲类型id
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
